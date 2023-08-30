@@ -62,10 +62,10 @@ async function showDetails(id){
   const data = await res.json();
   const details = data.data;
   displayDetails(details)
-  
 }
 function displayDetails(details){
   const modal = document.getElementById('modal-container')
+  // console.log(details);
   modal.innerHTML = `
   <div class="flex-1">
               <p>
@@ -75,21 +75,21 @@ function displayDetails(details){
                 <div
                   class="bg-green-100 shadow-xl p-2 rounded text-black"
                 >
-                <h3>${details?.pricing[0]?.plan}</h3>
-                <p>${details?.pricing[0]?.price}</p>
+                <h3>${details?.pricing ? details?.pricing[0]?.plan : 'no data'}</h3>
+                <p>${details?.pricing ? details?.pricing[0]?.price : 'no data'}</p>
                 
                 </div>
                 <div
                   class="bg-green-100 shadow-xl p-2 rounded text-black"
                 >
-                <h3>${details.pricing[1]?.plan}</h3>
-                <p>${details.pricing[1]?.price}</p>
+                <h3>${details?.pricing ? details?.pricing[1]?.plan : 'no data'}</h3>
+                <p>${details?.pricing ? details?.pricing[1]?.price : 'no data'}</p>
                 </div>
                 <div
                   class="bg-green-100 shadow-xl p-2 rounded text-black"
                 >
-                <h3>${details.pricing[2]?.plan}</h3>
-                <p>${details.pricing[2]?.price}</p>
+                <h3>${details?.pricing ? details?.pricing[2]?.plan : 'no data'}</h3>
+                <p>${details?.pricing ? details?.pricing[2]?.price : 'no data'}</p>
                 </div>
               </div>
               <div class="flex gap-2 justify-between">
@@ -105,7 +105,7 @@ function displayDetails(details){
                   <h3 class="my-2">Integrations</h3>
                   <ul class="list-disc">
                     ${
-                      details.integrations.map(item => `<li>${item}</li>`).join('') || 'no data found'
+                      details.integrations ? details.integrations.map(item => `<li>${item}</li>`).join('') : 'no data'
                     }
                   </ul>
                 </div>
@@ -116,8 +116,8 @@ function displayDetails(details){
               <div class="h-[200px]">
                 <img src="${details.image_link[0]}" />
               </div>
-              <h2 class="text-xl font-bold">${details.input_output_examples[0]?.input}</h2>
-              <p>${details.input_output_examples[0]?.output}</p>
+              <h2 class="text-xl font-bold">${details.input_output_examples ? details.input_output_examples[0]?.input : 'no data'}</h2>
+              <p>${details.input_output_examples ? details.input_output_examples[0]?.output : 'no data'}</p>
             </div>
             <!-- second -->
   `
