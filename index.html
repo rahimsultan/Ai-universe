@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Universe</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main max-w-6xl mx-auto px-5">
+      <h1 class="text-center text-4xl font-semibold my-8">AI Universe Hub</h1>
+      <div class="text-center">
+        <button id="sort" class="btn btn-info">Sort by Date</button>
+      </div>
+      <div
+        id="cards-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-4"
+      >
+        <!-- dynamic card goes here -->
+      </div>
+      <!-- modal -->
+      <dialog id="detailsModal" class="modal">
+        <form method="dialog" class="modal-box max-w-2xl">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
+          <div id="modal-container" class="flex gap-4 items-center">
+            <!-- <div class="flex-1">
+              <p id="description">
+                ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT
+                technology to simulate human conversation.
+              </p>
+              <div class="grid grid-cols-3 gap-1">
+                <div
+                  id="basic"
+                  class="bg-green-100 shadow-xl p-2 rounded text-black"
+                >
+                  $10/month Basic
+                </div>
+                <div
+                  id="pro"
+                  class="bg-green-100 shadow-xl p-2 rounded text-black"
+                >
+                  $10/month Basic
+                </div>
+                <div
+                  id="enterprise"
+                  class="bg-green-100 shadow-xl p-2 rounded text-black"
+                >
+                  $10/month Basic
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <div>
+                  <h3>Features</h3>
+                  <ul class="list-disc">
+                    <li>Customizable responses</li>
+                    <li>Multilingual support</li>
+                    <li>Seamless integration</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Integrations</h3>
+                  <ul class="list-disc">
+                    <li>FB Messenger</li>
+                    <li>Slack</li>
+                    <li>Telegram</li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+            <!-- second -->
+            <!-- <div class="text-center flex-1">
+              <div class="">
+                <img id="logo" />
+              </div>
+              <h2 class="text-xl font-bold">Hi, how are you doing today?</h2>
+              <p>
+                I'm doing well, thank you for asking. How can I assist you
+                today?
+              </p>
+            </div> -->
+            <!-- second -->
+          </div>
+        </form>
+      </dialog>
+      <!-- modal -->
+      <div id="showBtn" class="text-center my-4 hidden">
+        <button onclick="showAll()" class="btn btn-info">Show All</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
